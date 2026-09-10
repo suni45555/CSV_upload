@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npx -y mammoth Order-Type-Determination-Design.docx --output-format=markdown)"
-    ]
-  }
-}

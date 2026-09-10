@@ -1,0 +1,28 @@
+{
+  "VCAP_SERVICES": {
+    "hana": [
+      {
+        "name": "capm-csv-upload-db",
+        "label": "hana",
+        "tags": ["hana"],
+        "credentials": {
+          "driver": "com.sap.db.jdbc.Driver",
+          "host": "7dd11268-0ec2-45eb-b68b-000e19f1e0e4.hna0.prod-us10.hanacloud.ondemand.com",
+          "port": "443",
+          "url": "jdbc:sap://7dd11268-0ec2-45eb-b68b-000e19f1e0e4.hna0.prod-us10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true",
+          "uaa": {
+            "bindingid": "a257b0ca-8747-43f2-84ed-6c7940db4154",
+            "clientid": "sb-7dd11268-0ec2-45eb-b68b-000e19f1e0e4-4104!b707700|hc-us10-apigateway-hana-cloud!b3556",
+            "clientsecret": "a257b0ca-8747-43f2-84ed-6c7940db4154$Hy33idjZx3k7FL5UHGnY2u96ZPBt0o72BTJh52HpooY=",
+            "identityzone": "87413ffftrial",
+            "identityzoneid": "41048b30-e6c4-41de-9116-c0bdedc02afb",
+            "tenantid": "41048b30-e6c4-41de-9116-c0bdedc02afb",
+            "uaadomain": "authentication.us10.hana.ondemand.com",
+            "url": "https://87413ffftrial.authentication.us10.hana.ondemand.com",
+            "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtdzpy2jBpua9X3n6PKZU\nqeKrUMfesjX9BVVTyXWZhSmvOdUX5HxXZJtDN/30jupokx8tVcGz8JefRzkpAzgx\n1ntArRsRg3dBQK1TJAdeC6wYk/HFdO/B/kom7nGA/PYKOZ3TOyO1yRr1XD4y1xiN\nSrtjAhNXDiUYXZE79ORi1s+u2yC5WbuXEYjNIVtmg9ixb0A4LI/PlZwQpHiLMsUq\nxLD5rh2ODalxauMCD468WbtG2z9UiWE0SnPakS5LQWZxcMA3QULZ0jaeacJX79iX\nrMXHpCtvPtWOYRXftoTHoZ8lIcl/Wga6fCskNyTg6MFonqo2R8PfXcgO7ldMm1qB\newIDAQAB\n-----END PUBLIC KEY-----"
+          }
+        }
+      }
+    ]
+  }
+}

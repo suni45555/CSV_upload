@@ -1,0 +1,102 @@
+<mvc:View
+    controllerName="csvupload.controller.Main"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    height="100%">
+
+    <Shell>
+        <App>
+            <Page title="ZPTM_KBAN_MATCFG — Maintain Platform Component Materials"
+                  showNavButton="false">
+
+                <!-- Sub Header: Upload Bar -->
+                <subHeader>
+                    <Toolbar>
+                        <u:FileUploader
+                            id="fileUploader"
+                            fileType="xlsx,xls,csv"
+                            placeholder="Select Excel / CSV file..."
+                            change="onFileSelected"
+                            buttonText="Browse"
+                            width="400px" />
+                        <Button
+                            text="Upload"
+                            icon="sap-icon://upload"
+                            type="Emphasized"
+                            press="onUploadPress" />
+                        <Button
+                            text="Export Template"
+                            icon="sap-icon://download"
+                            type="Ghost"
+                            press="onExportTemplate" />
+                        <ToolbarSpacer />
+                        <Button
+                            text="Create"
+                            icon="sap-icon://add"
+                            type="Emphasized"
+                            press="onCreatePress" />
+                        <Button
+                            icon="sap-icon://refresh"
+                            press="onRefresh"
+                            tooltip="Refresh" />
+                    </Toolbar>
+                </subHeader>
+
+                <!-- Data Table -->
+                <Table
+                    id="materialTable"
+                    items="{path: '/MaterialConfig', parameters: {$orderby: 'MATNR'}}"
+                    growing="true"
+                    growingThreshold="50"
+                    sticky="ColumnHeaders,HeaderToolbar"
+                    mode="None">
+
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <Title text="Material Configuration Records" level="H3" />
+                        </OverflowToolbar>
+                    </headerToolbar>
+
+                    <columns>
+                        <Column width="14%"><Text text="Material Number" /></Column>
+                        <Column width="7%"><Text text="Plant" /></Column>
+                        <Column width="7%" hAlign="Center"><Text text="Active" /></Column>
+                        <Column width="10%" hAlign="End"><Text text="Max Containers" /></Column>
+                        <Column width="9%" hAlign="End"><Text text="Threshold" /></Column>
+                        <Column width="10%"><Text text="Created By" /></Column>
+                        <Column width="10%"><Text text="Created On" /></Column>
+                        <Column width="10%"><Text text="Changed By" /></Column>
+                        <Column width="10%"><Text text="Changed On" /></Column>
+                        <Column width="13%" hAlign="Center"><Text text="Actions" /></Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <Text text="{MATNR}" />
+                            <Text text="{WERKS}" />
+                            <ObjectStatus text="{ACTIVE}" state="{= ${ACTIVE} === 'X' ? 'Success' : 'None'}" icon="{= ${ACTIVE} === 'X' ? 'sap-icon://accept' : ''}" />
+                            <ObjectNumber number="{MAX_CONTAINERS}" />
+                            <ObjectNumber number="{THRESHOLD}" />
+                            <Text text="{CREATED_BY}" />
+                            <Text text="{CREATED_ON}" />
+                            <Text text="{CHANGED_BY}" />
+                            <Text text="{CHANGED_ON}" />
+                            <HBox justifyContent="Center">
+                                <Button icon="sap-icon://edit" type="Ghost" press="onEditPress" tooltip="Edit" />
+                                <Button icon="sap-icon://delete" type="Reject" press="onDeletePress" tooltip="Delete" />
+                            </HBox>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+                <footer>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <Label text="Staging Table — HANA Cloud" design="Bold" />
+                    </Toolbar>
+                </footer>
+            </Page>
+        </App>
+    </Shell>
+</mvc:View>

@@ -1,0 +1,11 @@
+ID,ruleName,branch,itemFound,hasContract,stockAvailable,serialMatched,boProvided,targetChannel,priority,orderType,chainedOrderType,hardBlock,blockReason,flaggedMissingSerial,active
+1,General - item not found (SFDC),GENERAL,false,,,,,SFDC,10,ZCFU,,false,missing serial number,true,true
+2,General - item not found (EDI),GENERAL,false,,,,,EDI,20,ZOR,,false,missing serial number,true,true
+3,General - serial matched success,GENERAL,true,true,true,true,,BOTH,30,ZCIS,ZBLO,false,,false,true
+4,General - serial not matched BO provided,GENERAL,true,true,true,false,true,BOTH,40,ZOR,,false,,true,true
+5,General - serial not matched no BO,GENERAL,true,true,true,false,false,BOTH,50,ZBLO,,false,,true,true
+6,General - no stock available,GENERAL,true,true,false,,,BOTH,60,,,,true,no stock available,false,true
+8,Consignment - ECUS without ESTO BO yes,CONSIGNMENT,,,,,true,BOTH,70,ZBLO,,false,,false,true
+9,Consignment - ECUS without ESTO BO no,CONSIGNMENT,,,,,false,BOTH,80,ZOR,,false,,false,true
+10,Consignment - transfer serial to customer,CONSIGNMENT,,,,true,,BOTH,90,ZCIS,ZBLO,false,,false,true
+7,Consignment - customer fail no stock,CONSIGNMENT,,,,,,BOTH,100,ZOR,,false,missing serial number,true,true

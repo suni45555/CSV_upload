@@ -1,0 +1,30 @@
+{
+  "welcomeFile": "/app/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/api/readonly/(.*)$",
+      "target": "/api/readonly/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/odata/v4/staging/(.*)$",
+      "target": "/odata/v4/staging/$1",
+      "destination": "srv-api",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/app/(.*)$",
+      "target": "/app/$1",
+      "destination": "srv-api",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/$1",
+      "destination": "srv-api",
+      "authenticationType": "none"
+    }
+  ]
+}

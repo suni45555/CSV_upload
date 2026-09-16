@@ -27,6 +27,16 @@
         "[production]": {
           "kind": "hana"
         }
+      },
+      "[production]": {
+        "auth": {
+          "kind": "xsuaa"
+        }
+      },
+      "[hybrid]": {
+        "auth": {
+          "kind": "xsuaa"
+        }
       }
     }
   }

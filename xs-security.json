@@ -1,0 +1,34 @@
+{
+  "xsappname": "capm_csv_upload",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin access for upload and CRUD"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Admin",
+      "description": "Admin role for full access",
+      "scope-references": ["$XSAPPNAME.Admin"]
+    },
+    {
+      "name": "Viewer",
+      "description": "Read-only access",
+      "scope-references": []
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "CSV_Upload_Admin",
+      "description": "Admin role collection",
+      "role-template-references": ["$XSAPPNAME.Admin"]
+    },
+    {
+      "name": "CSV_Upload_Viewer",
+      "description": "Viewer role collection",
+      "role-template-references": ["$XSAPPNAME.Viewer"]
+    }
+  ]
+}

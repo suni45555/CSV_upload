@@ -12,6 +12,7 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
+        - cp -r app gen/srv/app
 
 modules:
   # CAP Server
@@ -72,3 +73,5 @@ resources:
       service: xsuaa
       service-plan: application
       path: xs-security.json
+
+

@@ -10,11 +10,6 @@
       "csrfProtection": false
     },
     {
-      "source": "^/app/(.*)$",
-      "localDir": "app",
-      "authenticationType": "none"
-    },
-    {
       "source": "^(.*)$",
       "target": "$1",
       "destination": "srv-api",

@@ -1,5 +1,5 @@
 {
-  "welcomeFile": "/app/index.html",
+  "welcomeFile": "/index.html",
   "authenticationMethod": "route",
   "routes": [
     {
@@ -8,6 +8,11 @@
       "destination": "srv-api",
       "authenticationType": "xsuaa",
       "csrfProtection": false
+    },
+    {
+      "source": "^/app/(.*)$",
+      "localDir": "webapp",
+      "authenticationType": "none"
     },
     {
       "source": "^(.*)$",

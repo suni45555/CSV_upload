@@ -12,8 +12,7 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
-        - mkdir -p approuter/webapp
-        - cp -r app/* approuter/webapp/
+        - cp -r app approuter/webapp
 
 modules:
   # CAP Server
